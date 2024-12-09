@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
+
 def scrape_opentable_reviews(url, max_reviews=10):
     """
     Scrapes reviews from an OpenTable restaurant page.
@@ -14,14 +15,13 @@ def scrape_opentable_reviews(url, max_reviews=10):
     - list of dict: A list of reviews with the review text and date.
     """
     # Initialize WebDriver
-    driver = webdriver.Chrome()  # Ensure `chromedriver` is installed and in your PATH
+    driver = webdriver.Chrome()
     driver.get(url)
-    time.sleep(5)  # Wait for the page to load
+    time.sleep(5)
 
     reviews = []
 
     try:
-        # Scroll and load more reviews until reaching the desired count or no more reviews
         while len(reviews) < max_reviews:
             # Extract review elements
             review_elements = driver.find_elements(By.CLASS_NAME, 'afkKaa-4T28-')
@@ -56,12 +56,11 @@ def scrape_opentable_reviews(url, max_reviews=10):
     return reviews
 
 
-# Example usage
 if __name__ == "__main__":
-    opentable_url = "https://www.opentable.com/r/sacre-frenchy-paris?corrid=400c4ade-c1da-4fb9-88a7-a165c57bab08&avt=eyJ2IjoyLCJtIjoxLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2024-11-22T19%3A00%3A00"  # Replace with the actual URL
+    opentable_url = ("https://www.opentable.com/r/sacre-frenchy-paris?corrid=400c4ade-c1da-4fb9-88a7-a165c57bab08&avt"
+                     "=eyJ2IjoyLCJtIjoxLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2024-11-22T19%3A00%3A00")
     scraped_reviews = scrape_opentable_reviews(opentable_url, max_reviews=20)
 
-    # Print the reviews
     for idx, review in enumerate(scraped_reviews, 1):
         print(f"Review {idx}:")
         print(f"Date: {review['review_date']}")
