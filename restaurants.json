@@ -1,0 +1,271 @@
+{
+  "status": "ok",
+  "request_id": "91ceeceb-0892-4d1a-a989-c507abfc7830",
+  "data": {
+    "results": [
+      {
+        "id": "N1s7kKRwvSIkyuS-xbdwUA",
+        "name": "Il Giardino Ristorante",
+        "is_ad": false,
+        "rating": 4.7,
+        "review_count": 23,
+        "alias": "il-giardino-ristorante-roma-2",
+        "price_range": "€€€",
+        "categories": [
+          "Italienisch",
+          "Trendy",
+          "Vertraut"
+        ],
+        "website": "https://www.dorchestercollection.com/it/rome/hotel-eden/restaurants-bars/il-giardino/",
+        "neighborhoods": [
+          "Centro Storico"
+        ],
+        "phone": "06 47812761",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/bj9k9-g6YdUBcVbCjWRhdQ/348s.jpg"
+          }
+        ],
+        "ranking": 1
+      },
+      {
+        "id": "alzlKGqlBbfz3-U1dJfIJg",
+        "name": "Sapori e Delizie",
+        "is_ad": false,
+        "rating": 4.5,
+        "review_count": 881,
+        "alias": "sapori-e-delizie-roma-2",
+        "price_range": "€€",
+        "categories": [
+          "Pizza",
+          "Leger",
+          "Vertraut"
+        ],
+        "website": null,
+        "neighborhoods": [
+          "Monti"
+        ],
+        "phone": "06 4875450",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/Q4RFJOmxuhk0_pQMwGSr9Q/348s.jpg"
+          }
+        ],
+        "ranking": 2
+      },
+      {
+        "id": "lenzYIvN2Dk06boef6dfgg",
+        "name": "44 Osteria Quarantaquattro",
+        "is_ad": false,
+        "rating": 4.5,
+        "review_count": 498,
+        "alias": "44-osteria-quarantaquattro-roma",
+        "price_range": "€€€",
+        "categories": [
+          "Italienisch",
+          "Edel",
+          "Vertraut"
+        ],
+        "website": "http://www.osteriaquarantaquattro.com",
+        "neighborhoods": [
+          "Termini"
+        ],
+        "phone": "06 42013318",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/PbkLBgaEQ0mMsDXJnZXRVQ/348s.jpg"
+          }
+        ],
+        "ranking": 3
+      },
+      {
+        "id": "ehrW9keNRzswszJh7_nszw",
+        "name": "La Tavernaccia",
+        "is_ad": false,
+        "rating": 4.6,
+        "review_count": 81,
+        "alias": "la-tavernaccia-roma",
+        "price_range": "€€",
+        "categories": [
+          "Römisch",
+          "Pizza",
+          "Leger",
+          "Hipster"
+        ],
+        "website": "http://www.latavernaccia.com",
+        "neighborhoods": [
+          "Trastevere"
+        ],
+        "phone": "06 5812792",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/b6o-5Ko3bTp8YgoarXuwWg/348s.jpg"
+          }
+        ],
+        "ranking": 4
+      },
+      {
+        "id": "MtnKUDm2a9PckD_qnEAE5w",
+        "name": "Roscioli",
+        "is_ad": false,
+        "rating": 4.3,
+        "review_count": 463,
+        "alias": "roscioli-roma-4",
+        "price_range": "€€",
+        "categories": [
+          "Salumerie",
+          "Italienisch",
+          "Leger",
+          "Urig"
+        ],
+        "website": "http://www.salumeriaroscioli.com",
+        "neighborhoods": [
+          "Centro Storico"
+        ],
+        "phone": "06 6875287",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/K1jto9lue2oYjf_lMYiWvw/348s.jpg"
+          }
+        ],
+        "ranking": 5
+      },
+      {
+        "id": "O-PwNezcRXYyx2xiu9qVHQ",
+        "name": "Bottega Rocchi",
+        "is_ad": false,
+        "rating": 4.8,
+        "review_count": 5,
+        "alias": "bottega-rocchi-roma",
+        "price_range": "",
+        "categories": [
+          "Italienisch"
+        ],
+        "website": null,
+        "neighborhoods": [
+          "Centro Storico"
+        ],
+        "phone": "06 6786191",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/pnW86xYuRtpbvt3X7xqMPg/348s.jpg"
+          }
+        ],
+        "ranking": 6
+      },
+      {
+        "id": "SjQ3llg18UaJuQddi0nxKQ",
+        "name": "Il Bocconcino",
+        "is_ad": false,
+        "rating": 4.3,
+        "review_count": 93,
+        "alias": "il-bocconcino-roma-2",
+        "price_range": "€€",
+        "categories": [
+          "Italienisch",
+          "Weinbar",
+          "Leger",
+          "Romantisch"
+        ],
+        "website": "http://www.ilbocconcino.com/",
+        "neighborhoods": [
+          "Aventino"
+        ],
+        "phone": "06 77079175",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/TkcSIoy5iuA3jK4P_O6dcA/348s.jpg"
+          }
+        ],
+        "ranking": 7
+      },
+      {
+        "id": "-8Q7NhCtyf60fSkQqJxCHA",
+        "name": "La Prezzemolina",
+        "is_ad": false,
+        "rating": 4.8,
+        "review_count": 55,
+        "alias": "la-prezzemolina-roma",
+        "price_range": "€",
+        "categories": [
+          "Pizza",
+          "Italienisch",
+          "Sandwich &amp; Croque",
+          "Touri-Spot",
+          "Leger"
+        ],
+        "website": null,
+        "neighborhoods": [
+          "Monti"
+        ],
+        "phone": "06 94843773",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/OAydpHLGJLjSjSS1D76jOA/348s.jpg"
+          }
+        ],
+        "ranking": 8
+      },
+      {
+        "id": "SznVLEhuKCGJL6sR0SfE6A",
+        "name": "Hostaria Romana",
+        "is_ad": false,
+        "rating": 4.2,
+        "review_count": 218,
+        "alias": "hostaria-romana-roma",
+        "price_range": "€€",
+        "categories": [
+          "Italienisch",
+          "Leger",
+          "Urig"
+        ],
+        "website": "http://www.hostariaromana.it",
+        "neighborhoods": [
+          "Centro Storico"
+        ],
+        "phone": "06 4745284",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/bDEni5QX9h4eU1x4PVq4SQ/348s.jpg"
+          }
+        ],
+        "ranking": 9
+      },
+      {
+        "id": "dDaMYkgOett1PVEq-qk6Zg",
+        "name": "I Monticiani",
+        "is_ad": false,
+        "rating": 4.7,
+        "review_count": 31,
+        "alias": "i-monticiani-roma",
+        "price_range": "€",
+        "categories": [
+          "Italienisch",
+          "Leger",
+          "Romantisch"
+        ],
+        "website": null,
+        "neighborhoods": [
+          "Monti"
+        ],
+        "phone": "06 4817920",
+        "address": null,
+        "photos": [
+          {
+            "url": "https://s3-media0.fl.yelpcdn.com/bphoto/NYrKiQORfE1fKTBCaPv4BQ/348s.jpg"
+          }
+        ],
+        "ranking": 10
+      }
+    ]
+  }
+}
