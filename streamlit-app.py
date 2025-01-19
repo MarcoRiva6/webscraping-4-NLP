@@ -221,8 +221,6 @@ st.markdown(
     ## Project Overview
     This app demonstrates sentiment analysis on user reviews from restaurants. 
     It processes data uploaded as CSV files, performs sentiment analysis, and visualizes the results.
-
-    Upload your data to get started!
     """
 )
 
