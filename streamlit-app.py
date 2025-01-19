@@ -77,9 +77,9 @@ def perform_analysis(main_path, sources_path):
 
     return processed_datasets
 
-    print("Sentiment analysis complete")
-
 def plot_graphs(processed_datasets):
+    plt.style.use('dark_background')
+
     for source in processed_datasets:
         source['data']['source'] = source['name']
 
@@ -97,9 +97,23 @@ def plot_graphs(processed_datasets):
 
     combined_reviews['sentiment_category'] = combined_reviews['sentiment_score'].apply(categorize_sentiment)
 
+    # Introduction to Results Section
+    st.markdown("""
+    # Sentiment Analysis Results
+    In the following, the results of the sentiment analysis process are shown.
+    """)
+
     # Overall Distribution of Sentiment Scores
-    st.title("Overall Distribution of Sentiment Scores")
-    st.markdown("This graph shows the combined distribution of sentiment scores across all sources.")
+    st.markdown("""
+    ## Distribution of Sentiment Score
+    In order to illustrate the sentiment distribution of the two sources, histogram plots are used.
+    The first plot provides a combined view of the sentiment scores, while the subsequent plots separately show the sentiment distributions for each source, highlighting their individual characteristics.
+    """)
+
+    st.markdown("""
+    ### Overall
+    """)
+
     fig, ax = plt.subplots(figsize=(12, 6))
     sns.histplot(
         data=combined_reviews,
@@ -118,8 +132,9 @@ def plot_graphs(processed_datasets):
 
     # Sentiment Scores for Individual Sources
     for i, source in enumerate(processed_datasets):
-        st.title(f"Sentiment Scores for {source['name']}")
-        st.markdown(f"This graph shows the distribution of sentiment scores specifically for the source {source['name']}.")
+        st.markdown(f"""
+        ### {source['name']}
+        """)
         fig, ax = plt.subplots(figsize=(12, 6))
         sns.histplot(
             data=source['data'],
@@ -135,8 +150,10 @@ def plot_graphs(processed_datasets):
         st.pyplot(fig)
 
     # Violin Plot of Sentiment Scores by Source
-    st.title("Violin Plot of Sentiment Scores by Source")
-    st.markdown("This graph shows a violin plot of sentiment scores for each source, displaying the distribution and quartiles.")
+    st.markdown("""
+    ## Violin Plot of Sentiment Scores
+    To compare the sentiment variability and distribution, the violin plot illustrates the spread and variability of sentiment scores for each source.
+    """)
     fig, ax = plt.subplots(figsize=(12, 6))
     sns.violinplot(
         data=combined_reviews,
@@ -154,8 +171,10 @@ def plot_graphs(processed_datasets):
     st.pyplot(fig)
 
     # Density Plot of Sentiment Scores by Source
-    st.title("Density Plot of Sentiment Scores by Source")
-    st.markdown("This graph shows overlapping density plots for sentiment scores from all sources.")
+    st.markdown("""
+    ## Density Plot of Sentiment Scores
+    To compare the sentiment variability and distribution across the sources, the density plot provides a smooth, overlapping representation of sentiment score distributions.
+    """)
     fig, ax = plt.subplots(figsize=(12, 6))
     for source in processed_datasets:
         sns.kdeplot(
@@ -173,13 +192,20 @@ def plot_graphs(processed_datasets):
     st.pyplot(fig)
 
     # Sentiment Categories Proportions
-    st.title("Sentiment Categories Proportions")
-    st.markdown("This section shows the proportions of sentiment categories for each source.")
+    st.markdown("""
+    ## Sentiment Categories Proportions
+    To visualize the proportion of sentiment categories for the sources, pie charts are used.
+
+    The sentiment scores are categorized into three categories: **Positive**, **Negative**, and **Neutral**. They are categories are defined as follows:
+    - **Positive**: Score > 0.5
+    - **Negative**: Score < -0.5
+    - **Neutral**: -0.5 <= Score <= 0.5
+    """)
     source_sentiment_counts = combined_reviews.groupby('source')['sentiment_category'].value_counts(normalize=True).unstack()
     colors = sns.color_palette("pastel")
 
     for i, source in enumerate(processed_datasets):
-        st.subheader(f"Sentiment Categories for {source['name']}")
+        st.markdown(f"### {source['name']}")
         fig, ax = plt.subplots(figsize=(6, 6))
         ax.pie(
             source_sentiment_counts.loc[source['name']],
@@ -190,8 +216,6 @@ def plot_graphs(processed_datasets):
         )
         ax.set_title(f"Sentiment Categories ({source['name']})")
         st.pyplot(fig)
-
-    st.success("Sentiment analysis completed and visualized!")
 
 # Streamlit app
 st.title("Exploratory Sentiment Analysis Project")
@@ -210,10 +234,9 @@ st.markdown(
 if not os.path.exists('./temp_sources'):
     os.makedirs('./temp_sources')
 
-# File upload
-st.markdown("## Upload Your Data")
+st.markdown("## Upload Reviews")
 st.info("Upload CSV files containing reviews from different sources.")
-uploaded_files = st.file_uploader("Choose CSV files", type="csv", accept_multiple_files=True)
+uploaded_files = st.file_uploader("Upload source files", type="csv", accept_multiple_files=True)
 
 if uploaded_files:
     # Save uploaded files to temp_sources
@@ -221,7 +244,7 @@ if uploaded_files:
         with open(os.path.join('./temp_sources', uploaded_file.name), "wb") as f:
             f.write(uploaded_file.read())
 
-    st.success(f"Uploaded {len(uploaded_files)} files successfully!")
+    st.success(f"{len(uploaded_files)} sources uploaded")
 
     # Perform sentiment analysis
     st.write("Running sentiment analysis pipeline...")
@@ -233,12 +256,7 @@ if uploaded_files:
         print(e)
         st.stop()
 
-    # Load processed datasets
-    st.markdown("## Sentiment Analysis Results")
-
     plot_graphs(processed_datasets)
-
-    st.success("Sentiment analysis completed and visualized!")
 
 # Clean up directories
 if os.path.exists('./temp_sources'):
