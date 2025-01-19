@@ -64,7 +64,6 @@ def perform_analysis(main_path, sources_path):
         dataframe.drop(columns=['translated_text'], inplace=True)  # Remove translated_text from final output
         return dataframe
 
-    processed_datasets = []
     for dataset in initial_datasets:
         if dataset['name'] in [source['name'] for source in processed_datasets]: # Skip already loaded datasets
             continue
