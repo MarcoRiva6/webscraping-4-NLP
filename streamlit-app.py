@@ -1,17 +1,14 @@
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 import os
 import shutil
-import pandas as pd
-from langdetect import detect
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from googletrans import Translator
 
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
-import subprocess
+import streamlit as st
+from googletrans import Translator
+from langdetect import detect
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
 
 def perform_analysis(main_path, sources_path):
     initial_datasets = []
@@ -83,10 +80,8 @@ def plot_graphs(processed_datasets):
     for source in processed_datasets:
         source['data']['source'] = source['name']
 
-    # Combine datasets
     combined_reviews = pd.concat([source['data'] for source in processed_datasets], ignore_index=True)
 
-    # Categorize sentiment
     def categorize_sentiment(score):
         if score > 0.5:
             return 'Positive'
@@ -97,7 +92,7 @@ def plot_graphs(processed_datasets):
 
     combined_reviews['sentiment_category'] = combined_reviews['sentiment_score'].apply(categorize_sentiment)
 
-    # Introduction to Results Section
+    # Introduction
     st.markdown("""
     # Sentiment Analysis Results
     In the following, the results of the sentiment analysis process are shown.
@@ -217,7 +212,8 @@ def plot_graphs(processed_datasets):
         ax.set_title(f"Sentiment Categories ({source['name']})")
         st.pyplot(fig)
 
-# Streamlit app
+
+
 st.title("Exploratory Sentiment Analysis Project")
 
 st.markdown(
@@ -230,7 +226,6 @@ st.markdown(
     """
 )
 
-# Create directories if they don't exist
 if not os.path.exists('./temp_sources'):
     os.makedirs('./temp_sources')
 
@@ -239,14 +234,12 @@ st.info("Upload CSV files containing reviews from different sources.")
 uploaded_files = st.file_uploader("Upload source files", type="csv", accept_multiple_files=True)
 
 if uploaded_files:
-    # Save uploaded files to temp_sources
     for uploaded_file in uploaded_files:
         with open(os.path.join('./temp_sources', uploaded_file.name), "wb") as f:
             f.write(uploaded_file.read())
 
     st.success(f"{len(uploaded_files)} sources uploaded")
 
-    # Perform sentiment analysis
     st.write("Running sentiment analysis pipeline...")
     try:
         processed_datasets = perform_analysis(main_path='temp_output', sources_path='temp_sources')
@@ -258,7 +251,6 @@ if uploaded_files:
 
     plot_graphs(processed_datasets)
 
-# Clean up directories
 if os.path.exists('./temp_sources'):
     shutil.rmtree('./temp_sources')
 
